@@ -1,199 +1,559 @@
-<nav class="navbar">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Vince Portfolio</title>
 
-    <a href="#home" class="nav-btn active">
-        <i class="fa-solid fa-house"></i>
-        Home
-    </a>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 
-    <a href="#about" class="nav-btn">
-        <i class="fa-solid fa-user"></i>
-        About
-    </a>
+<style>
 
-    <a href="#projects" class="nav-btn">
-        <i class="fa-solid fa-code"></i>
-        Projects
-    </a>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    scroll-behavior:smooth;
+    font-family:Arial,Helvetica,sans-serif;
+}
 
-    <a href="#contact" class="nav-btn">
-        <i class="fa-solid fa-envelope"></i>
-        Contact
-    </a>
+body{
+    background:linear-gradient(135deg,#060816,#081322,#0a1d33);
+    color:#fff;
+}
+
+/* NAVBAR */
+
+header{
+    position:fixed;
+    width:100%;
+    top:0;
+    left:0;
+    background:rgba(5,10,25,.92);
+    backdrop-filter:blur(12px);
+    padding:18px 9%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    z-index:1000;
+}
+
+.logo{
+    font-size:40px;
+    font-weight:bold;
+    color:#00d9ff;
+    text-decoration:none;
+    text-shadow:0 0 10px rgba(0,217,255,.35);
+}
+
+nav{
+    display:flex;
+    gap:15px;
+}
+
+.nav-btn{
+    text-decoration:none;
+    color:white;
+    padding:10px 22px;
+    border-radius:30px;
+    transition:.35s;
+    font-weight:600;
+}
+
+.nav-btn:hover{
+    background:#00d9ff;
+    color:#08111f;
+    box-shadow:0 0 15px rgba(0,217,255,.35);
+}
+
+/* HERO */
+
+.hero{
+    min-height:100vh;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:0 10%;
+}
+
+.hero-content{
+    max-width:620px;
+}
+
+.hero h1{
+    font-size:80px;
+    line-height:1.1;
+}
+
+.hero span{
+    color:#00d9ff;
+    text-shadow:
+    0 0 8px rgba(0,217,255,.45),
+    0 0 20px rgba(0,217,255,.20);
+}
+
+.hero p{
+    margin:35px 0;
+    font-size:22px;
+    line-height:1.8;
+    color:#d9d9d9;
+}
+
+.hero-buttons{
+    display:flex;
+    gap:18px;
+}
+
+.btn{
+    text-decoration:none;
+    padding:15px 35px;
+    border-radius:50px;
+    font-weight:bold;
+    transition:.35s;
+}
+
+.btn-primary{
+    background:#00d9ff;
+    color:#06111d;
+    box-shadow:0 0 18px rgba(0,217,255,.30);
+}
+
+.btn-primary:hover{
+    transform:translateY(-4px);
+    box-shadow:0 0 28px rgba(0,217,255,.45);
+}
+
+.btn-outline{
+    border:2px solid #00d9ff;
+    color:#00d9ff;
+}
+
+.btn-outline:hover{
+    background:#00d9ff;
+    color:#08111f;
+}
+
+.social{
+    display:flex;
+    gap:18px;
+    margin-top:45px;
+}
+
+.social a{
+    width:48px;
+    height:48px;
+    border-radius:50%;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    border:2px solid #00d9ff;
+    color:white;
+    text-decoration:none;
+    transition:.3s;
+}
+
+.social a:hover{
+    background:#00d9ff;
+    color:#08111f;
+    box-shadow:0 0 18px rgba(0,217,255,.35);
+}
+
+.hero-image img{
+    width:420px;
+    height:420px;
+    border-radius:50%;
+    border:3px solid #00d9ff;
+    object-fit:cover;
+
+    box-shadow:
+    0 0 18px rgba(0,217,255,.40),
+    0 0 45px rgba(0,217,255,.18);
+}
+
+/* SECTIONS */
+
+section{
+    padding:100px 10%;
+}
+
+.section-title{
+    text-align:center;
+    color:#00d9ff;
+    font-size:45px;
+    margin-bottom:50px;
+}
+
+/* ABOUT */
+
+.about{
+    text-align:center;
+}
+
+.about p{
+    max-width:850px;
+    margin:auto;
+    line-height:1.9;
+    color:#d7d7d7;
+    font-size:18px;
+}
+
+.about .btn{
+    margin-top:35px;
+    display:inline-block;
+}
+
+/* PROJECTS */
+
+.projects-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+    gap:30px;
+}
+
+.card{
+
+    background:#101b2f;
+    border-radius:20px;
+    padding:30px;
+
+    border:1px solid rgba(0,217,255,.15);
+
+    transition:.35s;
+
+}
+
+.card:hover{
+
+    transform:translateY(-8px);
+
+    box-shadow:0 0 20px rgba(0,217,255,.18);
+
+}
+
+.card h3{
+
+    color:#00d9ff;
+    margin-bottom:15px;
+
+}
+
+.card p{
+
+    color:#d4d4d4;
+    line-height:1.8;
+    margin-bottom:25px;
+
+}
+
+.card-buttons{
+
+display:flex;
+gap:15px;
+
+}
+
+/* CONTACT */
+
+.contact{
+
+text-align:center;
+
+}
+
+.contact p{
+
+color:#d7d7d7;
+margin-bottom:30px;
+
+}
+
+/* FOOTER */
+
+footer{
+
+padding:40px;
+text-align:center;
+background:#040914;
+
+color:#999;
+
+margin-top:60px;
+
+}
+
+/* RESPONSIVE */
+
+@media(max-width:900px){
+
+.hero{
+
+flex-direction:column-reverse;
+justify-content:center;
+text-align:center;
+gap:60px;
+
+}
+
+.hero h1{
+
+font-size:55px;
+
+}
+
+.hero-buttons{
+
+justify-content:center;
+
+}
+
+.social{
+
+justify-content:center;
+
+}
+
+.hero-image img{
+
+width:300px;
+height:300px;
+
+}
+
+nav{
+
+display:none;
+
+}
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<header>
+
+<a href="#" class="logo">VINCE</a>
+
+<nav>
+
+<a href="#home" class="nav-btn">Home</a>
+
+<a href="#about" class="nav-btn">About</a>
+
+<a href="#projects" class="nav-btn">Projects</a>
+
+<a href="#contact" class="nav-btn">Contact</a>
 
 </nav>
 
+</header>
+
 <section class="hero" id="home">
 
-    <div class="hero-content">
+<div class="hero-content">
 
-        <h1>
-            Hello, I'm
-            <span>Vince</span>
-        </h1>
+<h1>
 
-        <p>
-            An aspiring Full Stack Developer and Creative Designer
-            who builds modern websites, interactive experiences,
-            and powerful digital solutions.
-        </p>
+Hello, I'm
 
-        <div class="hero-buttons">
+<br>
 
-            <a href="#projects" class="btn btn-primary">
-                <i class="fa-solid fa-folder-open"></i>
-                View Projects
-            </a>
+<span>Vince</span>
 
-            <a href="#contact" class="btn btn-outline">
-                <i class="fa-solid fa-paper-plane"></i>
-                Contact Me
-            </a>
+</h1>
 
-        </div>
+<p>
 
-        <div class="social-icons">
+An aspiring Full Stack Developer and Creative Designer who builds modern websites, interactive experiences, and powerful digital solutions.
 
-            <a href="#">
-                <i class="fab fa-facebook-f"></i>
-            </a>
+</p>
 
-            <a href="#">
-                <i class="fab fa-github"></i>
-            </a>
+<div class="hero-buttons">
 
-            <a href="#">
-                <i class="fab fa-instagram"></i>
-            </a>
+<a href="#projects" class="btn btn-primary">
 
-            <a href="#">
-                <i class="fab fa-linkedin-in"></i>
-            </a>
+View Projects
 
-        </div>
+</a>
 
-    </div>
+<a href="#contact" class="btn btn-outline">
 
-    <div class="hero-image">
+Contact Me
 
-        <img src="https://placehold.co/400x400" alt="Profile">
+</a>
 
-    </div>
+</div>
 
-</section>
+<div class="social">
 
-<section id="about" class="section">
+<a href="#"><i class="fab fa-facebook-f"></i></a>
 
-    <h2>About Me</h2>
+<a href="#"><i class="fab fa-github"></i></a>
 
-    <p>
-        I enjoy creating clean, responsive websites with modern UI,
-        smooth animations, and intuitive user experiences. My goal
-        is to build fast, beautiful, and user-friendly applications.
-    </p>
+<a href="#"><i class="fab fa-instagram"></i></a>
 
-    <a href="#projects" class="btn btn-primary">
-        Learn More
-    </a>
+<a href="#"><i class="fab fa-linkedin-in"></i></a>
+
+</div>
+
+</div>
+
+<div class="hero-image">
+
+<img src="https://placehold.co/420x420" alt="Profile">
+
+</div>
 
 </section>
 
-<section id="projects" class="section">
+<section class="about" id="about">
 
-    <h2>Featured Projects</h2>
+<h2 class="section-title">About Me</h2>
 
-    <div class="projects-grid">
+<p>
 
-        <div class="project-card">
+I am passionate about creating modern, responsive, and visually appealing websites. I enjoy transforming ideas into interactive digital experiences using HTML, CSS, JavaScript, and modern web technologies.
 
-            <h3>Portfolio Website</h3>
+</p>
 
-            <p>
-                Responsive portfolio built using HTML, CSS,
-                JavaScript and modern UI principles.
-            </p>
+<br>
 
-            <div class="project-buttons">
+<a href="#projects" class="btn btn-primary">
 
-                <a href="#" class="btn btn-primary">
-                    Live Demo
-                </a>
+My Projects
 
-                <a href="#" class="btn btn-outline">
-                    Source Code
-                </a>
-
-            </div>
-
-        </div>
-
-        <div class="project-card">
-
-            <h3>Apartment Finder</h3>
-
-            <p>
-                Web application helping students find apartments
-                with maps and booking features.
-            </p>
-
-            <div class="project-buttons">
-
-                <a href="#" class="btn btn-primary">
-                    Live Demo
-                </a>
-
-                <a href="#" class="btn btn-outline">
-                    Source Code
-                </a>
-
-            </div>
-
-        </div>
-
-        <div class="project-card">
-
-            <h3>Flappy Bird Game</h3>
-
-            <p>
-                JavaScript browser game featuring animations,
-                collision detection and scoring.
-            </p>
-
-            <div class="project-buttons">
-
-                <a href="#" class="btn btn-primary">
-                    Play
-                </a>
-
-                <a href="#" class="btn btn-outline">
-                    GitHub
-                </a>
-
-            </div>
-
-        </div>
-
-    </div>
+</a>
 
 </section>
 
-<section id="contact" class="section">
+<section id="projects">
 
-    <h2>Get In Touch</h2>
+<h2 class="section-title">
 
-    <p>
-        Let's build something amazing together.
-    </p>
+Featured Projects
 
-    <div class="hero-buttons">
+</h2>
 
-        <a href="mailto:your@email.com" class="btn btn-primary">
-            Email Me
-        </a>
+<div class="projects-grid">
 
-        <a href="#" class="btn btn-outline">
-            Download CV
-        </a>
+<div class="card">
 
-    </div>
+<h3>Portfolio Website</h3>
+
+<p>
+
+Modern responsive portfolio with clean UI, smooth animations, and glowing cyberpunk design.
+
+</p>
+
+<div class="card-buttons">
+
+<a href="#" class="btn btn-primary">
+
+Live Demo
+
+</a>
+
+<a href="#" class="btn btn-outline">
+
+GitHub
+
+</a>
+
+</div>
+
+</div>
+
+<div class="card">
+
+<h3>Apartment Finder</h3>
+
+<p>
+
+A web application that helps students locate apartments with an easy and modern interface.
+
+</p>
+
+<div class="card-buttons">
+
+<a href="#" class="btn btn-primary">
+
+Live Demo
+
+</a>
+
+<a href="#" class="btn btn-outline">
+
+GitHub
+
+</a>
+
+</div>
+
+</div>
+
+<div class="card">
+
+<h3>Game Project</h3>
+
+<p>
+
+Interactive JavaScript game featuring animations, collision detection, and responsive gameplay.
+
+</p>
+
+<div class="card-buttons">
+
+<a href="#" class="btn btn-primary">
+
+Play
+
+</a>
+
+<a href="#" class="btn btn-outline">
+
+GitHub
+
+</a>
+
+</div>
+
+</div>
+
+</div>
 
 </section>
+
+<section class="contact" id="contact">
+
+<h2 class="section-title">
+
+Contact Me
+
+</h2>
+
+<p>
+
+Interested in working together? Let's build something amazing.
+
+</p>
+
+<a href="mailto:your@email.com" class="btn btn-primary">
+
+Email Me
+
+</a>
+
+</section>
+
+<footer>
+
+© 2026 Vince Portfolio. All Rights Reserved.
+
+</footer>
+
+</body>
+</html>
