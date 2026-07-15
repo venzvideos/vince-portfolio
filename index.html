@@ -2,558 +2,321 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Vince Portfolio</title>
-
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-
+<title>Vince Portfolio - Particle Background</title>
 <style>
-
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    scroll-behavior:smooth;
-    font-family:Arial,Helvetica,sans-serif;
-}
-
-body{
-    background:linear-gradient(135deg,#060816,#081322,#0a1d33);
-    color:#fff;
-}
-
-/* NAVBAR */
-
-header{
-    position:fixed;
-    width:100%;
-    top:0;
-    left:0;
-    background:rgba(5,10,25,.92);
-    backdrop-filter:blur(12px);
-    padding:18px 9%;
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    z-index:1000;
-}
-
-.logo{
-    font-size:40px;
-    font-weight:bold;
-    color:#00d9ff;
-    text-decoration:none;
-    text-shadow:0 0 10px rgba(0,217,255,.35);
-}
-
-nav{
-    display:flex;
-    gap:15px;
-}
-
-.nav-btn{
-    text-decoration:none;
-    color:white;
-    padding:10px 22px;
-    border-radius:30px;
-    transition:.35s;
-    font-weight:600;
-}
-
-.nav-btn:hover{
-    background:#00d9ff;
-    color:#08111f;
-    box-shadow:0 0 15px rgba(0,217,255,.35);
-}
-
-/* HERO */
-
-.hero{
-    min-height:100vh;
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    padding:0 10%;
-}
-
-.hero-content{
-    max-width:620px;
-}
-
-.hero h1{
-    font-size:80px;
-    line-height:1.1;
-}
-
-.hero span{
-    color:#00d9ff;
-    text-shadow:
-    0 0 8px rgba(0,217,255,.45),
-    0 0 20px rgba(0,217,255,.20);
-}
-
-.hero p{
-    margin:35px 0;
-    font-size:22px;
-    line-height:1.8;
-    color:#d9d9d9;
-}
-
-.hero-buttons{
-    display:flex;
-    gap:18px;
-}
-
-.btn{
-    text-decoration:none;
-    padding:15px 35px;
-    border-radius:50px;
-    font-weight:bold;
-    transition:.35s;
-}
-
-.btn-primary{
-    background:#00d9ff;
-    color:#06111d;
-    box-shadow:0 0 18px rgba(0,217,255,.30);
-}
-
-.btn-primary:hover{
-    transform:translateY(-4px);
-    box-shadow:0 0 28px rgba(0,217,255,.45);
-}
-
-.btn-outline{
-    border:2px solid #00d9ff;
-    color:#00d9ff;
-}
-
-.btn-outline:hover{
-    background:#00d9ff;
-    color:#08111f;
-}
-
-.social{
-    display:flex;
-    gap:18px;
-    margin-top:45px;
-}
-
-.social a{
-    width:48px;
-    height:48px;
-    border-radius:50%;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    border:2px solid #00d9ff;
-    color:white;
-    text-decoration:none;
-    transition:.3s;
-}
-
-.social a:hover{
-    background:#00d9ff;
-    color:#08111f;
-    box-shadow:0 0 18px rgba(0,217,255,.35);
-}
-
-.hero-image img{
-    width:420px;
-    height:420px;
-    border-radius:50%;
-    border:3px solid #00d9ff;
-    object-fit:cover;
-
-    box-shadow:
-    0 0 18px rgba(0,217,255,.40),
-    0 0 45px rgba(0,217,255,.18);
-}
-
-/* SECTIONS */
-
-section{
-    padding:100px 10%;
-}
-
-.section-title{
-    text-align:center;
-    color:#00d9ff;
-    font-size:45px;
-    margin-bottom:50px;
-}
-
-/* ABOUT */
-
-.about{
-    text-align:center;
-}
-
-.about p{
-    max-width:850px;
-    margin:auto;
-    line-height:1.9;
-    color:#d7d7d7;
-    font-size:18px;
-}
-
-.about .btn{
-    margin-top:35px;
-    display:inline-block;
-}
-
-/* PROJECTS */
-
-.projects-grid{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
-    gap:30px;
-}
-
-.card{
-
-    background:#101b2f;
-    border-radius:20px;
-    padding:30px;
-
-    border:1px solid rgba(0,217,255,.15);
-
-    transition:.35s;
-
-}
-
-.card:hover{
-
-    transform:translateY(-8px);
-
-    box-shadow:0 0 20px rgba(0,217,255,.18);
-
-}
-
-.card h3{
-
-    color:#00d9ff;
-    margin-bottom:15px;
-
-}
-
-.card p{
-
-    color:#d4d4d4;
-    line-height:1.8;
-    margin-bottom:25px;
-
-}
-
-.card-buttons{
-
-display:flex;
-gap:15px;
-
-}
-
-/* CONTACT */
-
-.contact{
-
-text-align:center;
-
-}
-
-.contact p{
-
-color:#d7d7d7;
-margin-bottom:30px;
-
-}
-
-/* FOOTER */
-
-footer{
-
-padding:40px;
-text-align:center;
-background:#040914;
-
-color:#999;
-
-margin-top:60px;
-
-}
-
-/* RESPONSIVE */
-
-@media(max-width:900px){
-
-.hero{
-
-flex-direction:column-reverse;
-justify-content:center;
-text-align:center;
-gap:60px;
-
-}
-
-.hero h1{
-
-font-size:55px;
-
-}
-
-.hero-buttons{
-
-justify-content:center;
-
-}
-
-.social{
-
-justify-content:center;
-
-}
-
-.hero-image img{
-
-width:300px;
-height:300px;
-
-}
-
-nav{
-
-display:none;
-
-}
-
-}
-
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  html, body {
+    background: #0a0e17; /* fallback color, sits behind the canvas */
+    color: #fff;
+    font-family: sans-serif;
+    scroll-behavior: smooth;
+  }
+
+  /* The canvas is fixed so it stays put behind every section as you scroll */
+  #bg-canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1; /* sits behind ALL content */
+    display: block;
+  }
+
+  nav {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 24px 60px;
+    background: rgba(10, 14, 23, 0.6); /* translucent so particles show faintly through nav too */
+  }
+
+  nav .logo {
+    font-size: 26px;
+    font-weight: bold;
+    color: #22d3ee;
+  }
+
+  nav ul {
+    list-style: none;
+    display: flex;
+    gap: 40px;
+  }
+
+  nav a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 500;
+  }
+
+  section {
+    position: relative;
+    z-index: 1;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 80px 60px;
+    /* IMPORTANT: no solid background here — leave transparent so the canvas shows through */
+    background: transparent;
+  }
+
+  #about, #projects, #contact {
+    align-items: center;
+    text-align: center;
+  }
+
+  h1 {
+    font-size: 48px;
+  }
+
+  h1 span, h2 {
+    color: #22d3ee;
+  }
+
+  h2 {
+    font-size: 36px;
+    margin-bottom: 24px;
+  }
+
+  p {
+    color: #cbd5e1;
+    max-width: 700px;
+    line-height: 1.6;
+    margin: 16px 0;
+  }
+
+  .btn {
+    display: inline-block;
+    padding: 14px 28px;
+    border-radius: 999px;
+    background: #22d3ee;
+    color: #0a0e17;
+    font-weight: bold;
+    text-decoration: none;
+    margin-top: 24px;
+    box-shadow: 0 0 20px rgba(34, 211, 238, 0.5);
+  }
+
+  .btn.outline {
+    background: transparent;
+    border: 2px solid #22d3ee;
+    color: #22d3ee;
+    box-shadow: none;
+  }
+
+  .btn-row {
+    display: flex;
+    gap: 16px;
+  }
+
+  .cards {
+    display: flex;
+    gap: 24px;
+    margin-top: 40px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .card {
+    background: rgba(20, 26, 40, 0.5); /* translucent card so it still reads as a card but lets particles show through slightly */
+    border: 1px solid rgba(34, 211, 238, 0.3);
+    border-radius: 16px;
+    padding: 28px;
+    width: 280px;
+    text-align: left;
+  }
+
+  .card h3 {
+    color: #22d3ee;
+    margin-bottom: 12px;
+  }
+
+  footer {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    padding: 24px;
+    color: #64748b;
+    background: transparent;
+  }
 </style>
-
 </head>
-
 <body>
 
-<header>
-
-<a href="#" class="logo">VINCE</a>
+<canvas id="bg-canvas"></canvas>
 
 <nav>
-
-<a href="#home" class="nav-btn">Home</a>
-
-<a href="#about" class="nav-btn">About</a>
-
-<a href="#projects" class="nav-btn">Projects</a>
-
-<a href="#contact" class="nav-btn">Contact</a>
-
+  <div class="logo">VINCE</div>
+  <ul>
+    <li><a href="#home">Home</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
 </nav>
 
-</header>
-
-<section class="hero" id="home">
-
-<div class="hero-content">
-
-<h1>
-
-Hello, I'm
-
-<br>
-
-<span>Vince</span>
-
-</h1>
-
-<p>
-
-An aspiring Full Stack Developer and Creative Designer who builds modern websites, interactive experiences, and powerful digital solutions.
-
-</p>
-
-<div class="hero-buttons">
-
-<a href="#projects" class="btn btn-primary">
-
-View Projects
-
-</a>
-
-<a href="#contact" class="btn btn-outline">
-
-Contact Me
-
-</a>
-
-</div>
-
-<div class="social">
-
-<a href="#"><i class="fab fa-facebook-f"></i></a>
-
-<a href="#"><i class="fab fa-github"></i></a>
-
-<a href="#"><i class="fab fa-instagram"></i></a>
-
-<a href="#"><i class="fab fa-linkedin-in"></i></a>
-
-</div>
-
-</div>
-
-<div class="hero-image">
-
-<img src="https://placehold.co/420x420" alt="Profile">
-
-</div>
-
+<section id="home">
+  <h1>Hello, I'm <span>Vince</span></h1>
+  <p>An aspiring Full Stack Developer and Creative Designer who builds modern websites, interactive experiences, and powerful digital solutions.</p>
+  <div class="btn-row">
+    <a href="#projects" class="btn">View Projects</a>
+    <a href="#contact" class="btn outline">Contact Me</a>
+  </div>
 </section>
 
-<section class="about" id="about">
-
-<h2 class="section-title">About Me</h2>
-
-<p>
-
-I am passionate about creating modern, responsive, and visually appealing websites. I enjoy transforming ideas into interactive digital experiences using HTML, CSS, JavaScript, and modern web technologies.
-
-</p>
-
-<br>
-
-<a href="#projects" class="btn btn-primary">
-
-My Projects
-
-</a>
-
+<section id="about">
+  <h2>About Me</h2>
+  <p>I am passionate about creating modern, responsive, and visually appealing websites. I enjoy transforming ideas into interactive digital experiences using HTML, CSS, JavaScript, and modern web technologies.</p>
+  <a href="#projects" class="btn">My Projects</a>
 </section>
 
 <section id="projects">
-
-<h2 class="section-title">
-
-Featured Projects
-
-</h2>
-
-<div class="projects-grid">
-
-<div class="card">
-
-<h3>Portfolio Website</h3>
-
-<p>
-
-Modern responsive portfolio with clean UI, smooth animations, and glowing cyberpunk design.
-
-</p>
-
-<div class="card-buttons">
-
-<a href="#" class="btn btn-primary">
-
-Live Demo
-
-</a>
-
-<a href="#" class="btn btn-outline">
-
-GitHub
-
-</a>
-
-</div>
-
-</div>
-
-<div class="card">
-
-<h3>Apartment Finder</h3>
-
-<p>
-
-A web application that helps students locate apartments with an easy and modern interface.
-
-</p>
-
-<div class="card-buttons">
-
-<a href="#" class="btn btn-primary">
-
-Live Demo
-
-</a>
-
-<a href="#" class="btn btn-outline">
-
-GitHub
-
-</a>
-
-</div>
-
-</div>
-
-<div class="card">
-
-<h3>Game Project</h3>
-
-<p>
-
-Interactive JavaScript game featuring animations, collision detection, and responsive gameplay.
-
-</p>
-
-<div class="card-buttons">
-
-<a href="#" class="btn btn-primary">
-
-Play
-
-</a>
-
-<a href="#" class="btn btn-outline">
-
-GitHub
-
-</a>
-
-</div>
-
-</div>
-
-</div>
-
+  <h2>Featured Projects</h2>
+  <div class="cards">
+    <div class="card">
+      <h3>Portfolio Website</h3>
+      <p>Modern responsive portfolio with clean UI, smooth animations, and glowing cyberpunk design.</p>
+      <div class="btn-row">
+        <a href="#" class="btn">Live Demo</a>
+        <a href="#" class="btn outline">GitHub</a>
+      </div>
+    </div>
+    <div class="card">
+      <h3>Apartment Finder</h3>
+      <p>A web application that helps students locate apartments with an easy and modern interface.</p>
+      <div class="btn-row">
+        <a href="#" class="btn">Live Demo</a>
+        <a href="#" class="btn outline">GitHub</a>
+      </div>
+    </div>
+    <div class="card">
+      <h3>Game Project</h3>
+      <p>Interactive JavaScript game featuring animations, collision detection, and responsive gameplay.</p>
+      <div class="btn-row">
+        <a href="#" class="btn">Play</a>
+        <a href="#" class="btn outline">GitHub</a>
+      </div>
+    </div>
+  </div>
 </section>
 
-<section class="contact" id="contact">
-
-<h2 class="section-title">
-
-Contact Me
-
-</h2>
-
-<p>
-
-Interested in working together? Let's build something amazing.
-
-</p>
-
-<a href="mailto:your@email.com" class="btn btn-primary">
-
-Email Me
-
-</a>
-
+<section id="contact">
+  <h2>Contact Me</h2>
+  <p>Interested in working together? Let's build something amazing.</p>
+  <a href="#" class="btn">Email Me</a>
 </section>
 
 <footer>
-
-© 2026 Vince Portfolio. All Rights Reserved.
-
+  &copy; 2026 Vince Portfolio. All Rights Reserved.
 </footer>
+
+<script>
+const canvas = document.getElementById('bg-canvas');
+const ctx = canvas.getContext('2d');
+
+let width, height;
+function resize() {
+  width = canvas.width = window.innerWidth;
+  height = canvas.height = window.innerHeight;
+}
+resize();
+window.addEventListener('resize', resize);
+
+// ---- Tunable settings ----
+const PARTICLE_COUNT = 90;
+const MAX_DISTANCE = 140;
+const PARTICLE_SPEED = 0.3;
+const DOT_COLOR = '96, 200, 255';
+const LINE_COLOR = '96, 200, 255';
+const DOT_RADIUS = 2;
+const MOUSE_RADIUS = 150;
+
+let particles = [];
+
+function createParticles() {
+  particles = [];
+  for (let i = 0; i < PARTICLE_COUNT; i++) {
+    particles.push({
+      x: Math.random() * width,
+      y: Math.random() * height,
+      vx: (Math.random() - 0.5) * PARTICLE_SPEED,
+      vy: (Math.random() - 0.5) * PARTICLE_SPEED,
+    });
+  }
+}
+createParticles();
+
+let mouse = { x: null, y: null };
+window.addEventListener('mousemove', (e) => {
+  mouse.x = e.clientX;
+  mouse.y = e.clientY;
+});
+window.addEventListener('mouseout', () => {
+  mouse.x = null;
+  mouse.y = null;
+});
+
+function animate() {
+  ctx.clearRect(0, 0, width, height);
+
+  for (let p of particles) {
+    p.x += p.vx;
+    p.y += p.vy;
+
+    if (p.x < 0 || p.x > width) p.vx *= -1;
+    if (p.y < 0 || p.y > height) p.vy *= -1;
+
+    if (mouse.x !== null) {
+      const dx = p.x - mouse.x;
+      const dy = p.y - mouse.y;
+      const dist = Math.sqrt(dx * dx + dy * dy);
+      if (dist < MOUSE_RADIUS) {
+        const force = (MOUSE_RADIUS - dist) / MOUSE_RADIUS;
+        p.x += (dx / dist) * force * 1.5;
+        p.y += (dy / dist) * force * 1.5;
+      }
+    }
+
+    ctx.beginPath();
+    ctx.arc(p.x, p.y, DOT_RADIUS, 0, Math.PI * 2);
+    ctx.fillStyle = `rgba(${DOT_COLOR}, 0.8)`;
+    ctx.fill();
+  }
+
+  for (let i = 0; i < particles.length; i++) {
+    for (let j = i + 1; j < particles.length; j++) {
+      const a = particles[i];
+      const b = particles[j];
+      const dx = a.x - b.x;
+      const dy = a.y - b.y;
+      const dist = Math.sqrt(dx * dx + dy * dy);
+
+      if (dist < MAX_DISTANCE) {
+        const opacity = 1 - dist / MAX_DISTANCE;
+        ctx.beginPath();
+        ctx.moveTo(a.x, a.y);
+        ctx.lineTo(b.x, b.y);
+        ctx.strokeStyle = `rgba(${LINE_COLOR}, ${opacity * 0.5})`;
+        ctx.lineWidth = 1;
+        ctx.stroke();
+      }
+    }
+  }
+
+  requestAnimationFrame(animate);
+}
+
+animate();
+</script>
 
 </body>
 </html>
